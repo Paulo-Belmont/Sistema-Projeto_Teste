@@ -1,0 +1,115 @@
+﻿
+.ie9 .global {
+    padding-top: 50px;
+}
+
+.pointer, .cursor {
+    cursor: pointer;
+}
+
+.lettersmall {
+    font-size: larger;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.modalBackground {
+    background-color: Aqua;
+    top: 0px !important;
+    left: 0px !important;
+    position: absolute !important;
+    z-index: 1 !important;
+}
+
+.modalPopup {
+    background-color: #fffddd;
+    padding: 3px;
+    z-index: 10001;
+}
+
+.paragraph {
+    padding-top: 30px;
+}
+
+.paragraph_apresentation {
+    padding-top: 20px;
+}
+
+.masterPage {
+    padding-bottom: -20px;
+    position: absolute;
+}
+
+.span-small {
+    width: 428px;
+}
+
+.field-mini {
+    width: 110px;
+}
+
+.field-mini-small {
+    width: 140px;
+}
+
+.field-small {
+    width: 145px;
+}
+
+.field-small-medium {
+    width: 195px;
+}
+
+.field-medium {
+    width: 200px;
+}
+
+.field-medium-small {
+    width: 240px;
+}
+
+.field-large-medium {
+    width: 300px;
+}
+
+.field-large {
+    width: 320px;
+}
+
+.field-xlarge {
+    width: 330px;
+}
+
+.field-xxlarge {
+    width: 380px;
+}
+
+.textarea-ylarge {
+    width: 650px;
+    height: 80px;
+}
+
+.textarea-medium-large {
+    width: 265px;
+    height: 135px;
+}
+
+.textarea-medium-xlarge {
+    width: 330px;
+    height: 120px;
+}
+
+.textarea-medium-small {
+    width: 170px;
+    height: 117px;
+}
+
+.left-label-large {
+    padding-left: 80px;
+}
+
+.left-label-medium {
+    padding-left: 60px;
+}

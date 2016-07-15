@@ -1,0 +1,15 @@
+/* Titulos, subtitulos e paragrafos */
+h2 { font-size:19.5px; font-weight:normal; }
+p strong { padding-top:20px; }
+p.teste { float:left; }
+p.icon-opera-mini { }
+
+/* Divs */
+div.login { width:270px; float:right; }
+div.well { padding-bottom:50px; }
+
+/* Footer */
+footer { background:#f5f5f5; width:100%; border-top:1px solid #DDD; }
+.footer { padding:20px 0 50px 0; }
+.footer p { margin-bottom:0; }
+.footer img { padding-left:20px; }

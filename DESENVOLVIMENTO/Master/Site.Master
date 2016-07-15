@@ -1,0 +1,148 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Sistema.ProjetoTeste.UI.Master.Site" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head id="Head1" runat="server">
+    <meta http-equiv="content-type" content="text/html; charset=Windows-1252" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Projeto de Teste</title>
+    <!-- Importante para acessibilidade para outros dispositivos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Framework bootstrap CSS -->
+    <%--<link rel="Shortcut Icon" href="#" />--%>
+    <link rel="Stylesheet" type="text/css" href="../Recursos/01/css/bootstrap.css" />
+    <link rel="Stylesheet" type="text/css" href="../Recursos/01/css/bootstrap.min.css" />
+    <link rel="Stylesheet" type="text/css" href="../Recursos/01/css/ui.datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="../Recursos/01/css/jquery-ui-1.7.2.custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Recursos/01/css/jquery.ui.core.css" />
+    <link rel="Stylesheet" type="text/css" href="../Recursos/01/css/customizacao.css" />
+    <link rel="Stylesheet" type="text/css" href="../Recursos/01/css/autocomplete.css" />
+    <!-- CSS Customizacao framework bootstrap -->
+    <link rel="Stylesheet" type="text/css" href="../Recursos/01/css/main.css" />
+    <!-- Framework bootstrap JAVASCRIPT -->
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!--  CONDICIONAIS INTERNET EXPLORER -------------------------------------------- -->
+    <!--[if IE 9 ]><div class="ie ie9"><![endif]-->
+    <!--[if IE 8 ]><div class="ie ie8"><![endif]-->
+    <!--[if IE 7 ]><div class="ie ie7"><![endif]-->
+    <!--[if !IE  ]><div><![endif]-->
+    <form id="form1" runat="server">
+    <%--Conteúdo principal--%>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <%--Cabeçalho--%>
+            <%-- <eco:Header ID="ecoHeader" runat="server" />--%>
+            <div class="container">
+                <!-- Adicione o nome do projeto abaixo -->
+                <a class="brand" id="brand" runat="server" href="~/Default.aspx">Sistema Projeto de
+                    Teste</a>
+                <!-- MEGA MENU - Área responsável por agrupar todos os blocos de links para a navegação da aplicação. Quando deseja-se criar um
+                 novo bloco de itens, deve-se duplicar todo o elemento <div class="item"> localizado no grupo/pai <li class="lista">. -->
+                <div class="btn-group pull-right">
+                    <a id="aUsuarioTitular" runat="server" class="btn dropdown-toggle" data-toggle="dropdown"
+                        href="#"><i class="icon-user"></i>&nbsp;<asp:Literal ID="lblUsuarioLabel" runat="server"></asp:Literal>
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <asp:LinkButton ID="lknSair" runat="server" OnClick="lknSair_Click" CausesValidation="false"><i class="icon-off"></i> &nbsp;Sair</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="menu">
+                    <li><a id="tituloMenu" runat="server" class="detail">Menu<span class="caret"></span></a>
+                        <ul class="subnivel">
+                            <li class="lista">
+                                <div class="item">
+                                    <h2>
+                                        Cadastros / Pesquisas</h2>
+                                    <ul>
+                                        <li><a runat="server" id="ancChamado" href="~/Paginas/ChamadoManter.aspx">Chamado</a></li>
+                                    </ul>
+                                </div>
+                                <!-- fim item -->
+                                <div id="divConsultas" runat="server" class="item">
+                                    <h2 id="h2Consultas" runat="server">
+                                        Consultas / Relatórios</h2>
+                                    <ul>
+                                        <li><a runat="server" id="ancListarChamado" href="~/Relatorios/RelatorioListaChamadosManter.aspx">
+                                            Listar Chamados</a></li>
+                                    </ul>
+                                </div>
+                                <!-- fim item -->
+                            </li>
+                            <li class="suporte">
+                                <div class="item">
+                                    <h4>
+                                        PROJETO TESTE</h4>
+                                    <p>
+                                    </p>
+                                    <h2>
+                                        CONTATO</h2>
+                                    <p>
+                                        (21) 9946-80671<a href="mailto:phb.analista@gmail.com" class="email" title="Envie um email para o suporte do sistema">phb.analista@gmail.com</a></p>
+                                </div>
+                                <!-- fim item -->
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- fim menu -->
+            </div>
+        </div>
+    </div>
+    <div class="global min-height">
+        <div class="container">
+            <%-- <div id="VisualizarTituloLabel" runat="server">
+                <h1>
+                    <asp:Label ID="TituloLabel" runat="server" Font-Size="X-Large" />
+                </h1>
+            </div>--%>
+            <asp:ToolkitScriptManager ID="toolkitScriptMaster" runat="server" EnableScriptGlobalization="true"
+                EnablePageMethods="true">
+                <Scripts>
+                    <asp:ScriptReference Path="~/Recursos/01/js/jquerymin.js" />
+                    <asp:ScriptReference Path="~/Recursos/01/js/bootstrap.min.js" />
+                    <asp:ScriptReference Path="~/Recursos/01/js/jquery.maskedinput-1.2.2.js" />
+                    <asp:ScriptReference Path="~/Recursos/01/js/jquery.maxlength.js" />
+                    <asp:ScriptReference Path="~/Recursos/01/js/jquery.textOnly.js" />
+                    <asp:ScriptReference Path="~/Recursos/01/js/ui.datepicker-pt-BR.js" />
+                    <asp:ScriptReference Path="~/Recursos/01/js/ui.datepicker.js" />
+                    <asp:ScriptReference Path="~/Recursos/01/js/Util.js" />
+                    <asp:ScriptReference Path="~/Recursos/01/js/bootstrap-modal.js" />
+                    <asp:ScriptReference Path="~/Recursos/01/js/master.js" />
+                    <asp:ScriptReference Path="~/Recursos/01/js/menu.js" />
+                    <asp:ScriptReference Path="~/Recursos/01/js/customizacoes.js" />
+                </Scripts>
+            </asp:ToolkitScriptManager>
+            <%--Conteúdo/Páginas internas--%>
+            <asp:ValidationSummary ID="valErrorSummary" runat="server" DisplayMode="List" CssClass="alert-danger alert valErrorSummary"
+                HeaderText='<h4 class="alert-heading masterPage">Atenção!</h4>' />
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <script type="text/javascript" language="javascript">
+
+                Sys.Application.add_load(datePicker);
+                Sys.Application.add_load(mask);
+                Sys.Application.add_load(Inicializar);
+                Sys.Application.add_load(Upper);
+                Sys.Application.add_load(maxlengthTextArea);
+                Sys.Application.add_load(maskNumber);
+                Sys.Application.add_load(maskCodigo);
+                  
+            </script>
+        </div>
+    </div>
+    <%--Rodapé--%>
+    <footer>
+	    <div class="container footer">        
+                <p>Copyright ©2016. Todos os direitos reservados.</p>
+            </div>
+    </footer>
+    </form>
+    <!--[if IE  ]></div><![endif]-->
+</body>
+</html>

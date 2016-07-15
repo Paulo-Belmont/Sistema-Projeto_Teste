@@ -1,0 +1,21 @@
+﻿<asp:TextBox runat="server"
+             SkinID="DataTextBox"
+             DatePicker=""
+             CssClass="input-small"
+             MudarAno="true"
+             MudarMes="true"
+             Ranger="-100:+100" />
+
+<asp:TextBox runat="server"
+             SkinID="HoraTextBox"
+             CssClass="input-mini"
+             Mask="99:99" />
+             
+<asp:GridView runat="server"
+              SkinID="ListGridView"  
+              CssClass="table table-striped table-bordered table-condensed"
+              EmptyDataText="Nenhum registro encontrado"
+              AutoGenerateColumns="False"
+              AllowPaging="True"
+              PageSize="10" 
+              GridLines="None" /> 

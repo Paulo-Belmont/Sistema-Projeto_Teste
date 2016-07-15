@@ -1,0 +1,54 @@
+USE [PROJETO_TESTE]
+GO
+/****** Object:  Table [dbo].[UsuarioSistema]    Script Date: 07/13/2016 17:57:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UsuarioSistema](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[RowVersion] [int] NOT NULL,
+	[Login] [nvarchar](40) NULL,
+	[Senha] [nvarchar](32) NULL,
+	[DataCriacao] [datetime] NULL,
+	[Perfil] [int] NULL,
+	[Nome] [nvarchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Chamado]    Script Date: 07/13/2016 17:57:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Chamado](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[RowVersion] [int] NOT NULL,
+	[TipoChamado] [int] NULL,
+	[TipoEstado] [int] NULL,
+	[TipoMotivoChamado] [int] NULL,
+	[DataInicial] [datetime] NULL,
+	[DataFinal] [datetime] NULL,
+	[UsuarioSistema_id] [int] NULL,
+	[Registro] [nvarchar](1000) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Default [DF__Chamado__RowVers__014935CB]    Script Date: 07/13/2016 17:57:06 ******/
+ALTER TABLE [dbo].[Chamado] ADD  DEFAULT ((1)) FOR [RowVersion]
+GO
+/****** Object:  Default [DF__UsuarioSi__RowVe__060DEAE8]    Script Date: 07/13/2016 17:57:06 ******/
+ALTER TABLE [dbo].[UsuarioSistema] ADD  DEFAULT ((1)) FOR [RowVersion]
+GO
+/****** Object:  ForeignKey [FK2C1F30BAD598C330]    Script Date: 07/13/2016 17:57:06 ******/
+ALTER TABLE [dbo].[Chamado]  WITH CHECK ADD  CONSTRAINT [FK2C1F30BAD598C330] FOREIGN KEY([UsuarioSistema_id])
+REFERENCES [dbo].[UsuarioSistema] ([Id])
+GO
+ALTER TABLE [dbo].[Chamado] CHECK CONSTRAINT [FK2C1F30BAD598C330]
+GO

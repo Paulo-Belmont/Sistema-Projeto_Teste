@@ -1,0 +1,38 @@
+﻿body
+{
+}
+
+.autocomplete_elemento
+{
+	visibility: hidden;
+	margin: 0px !important;
+	background-color: inherit;
+	color: windowtext;
+	border: buttonshadow;
+	border-width: 1px;
+	border-style: solid;
+	cursor: 'default';
+	overflow: auto;
+	max-height: 200px;
+	text-align: left;
+	list-style-type: none;
+	z-index: 1;
+}
+
+/* AutoComplete highlighted item */
+
+.autocomplete_realce
+{
+	background-color: #ffff99;
+	color: black;
+	padding: 1px;
+}
+
+/* AutoComplete item */
+
+.autocomplete_item
+{
+	background-color: #d2e2ed;
+	color: windowtext;
+	padding: 1px;
+}
